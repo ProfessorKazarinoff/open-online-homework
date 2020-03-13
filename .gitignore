@@ -317,3 +317,7 @@ GitHub.sublime-settings
 .vscode/
 .idea
 .idea/
+
+# sqlite database
+
+src/db.sqlite3
