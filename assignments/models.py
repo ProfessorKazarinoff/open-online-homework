@@ -1,8 +1,7 @@
-# src/assignments/models.py
+# assignments/models.py
 
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.conf import settings
 from django.urls import reverse
 
 

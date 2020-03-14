@@ -1,4 +1,4 @@
-# src/assignments/urls.py
+# assignments/urls.py
 
 from django.urls import path
 

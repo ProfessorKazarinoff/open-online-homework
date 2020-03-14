@@ -1,4 +1,4 @@
-# src/users/models.py
+# users/models.py
 
 from django.conf import settings
 from django.db import models

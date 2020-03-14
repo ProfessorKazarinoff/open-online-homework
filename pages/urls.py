@@ -1,4 +1,4 @@
-# src/pages/urls.py
+# pages/urls.py
 
 from django.urls import path
 

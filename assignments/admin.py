@@ -1,4 +1,4 @@
-# src/assignments/admin.py
+# assignments/admin.py
 
 from django.contrib import admin
 

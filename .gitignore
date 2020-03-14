@@ -322,3 +322,6 @@ GitHub.sublime-settings
 
 src/db.sqlite3
 db.sqlite3
+
+# MacOS
+.DS_Store
