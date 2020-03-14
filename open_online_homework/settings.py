@@ -124,6 +124,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Crispy Forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 # Custom User Model
 
 AUTH_USER_MODEL = "users.User"
