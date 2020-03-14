@@ -321,3 +321,4 @@ GitHub.sublime-settings
 # sqlite database
 
 src/db.sqlite3
+db.sqlite3
