@@ -1,0 +1,17 @@
+<!-- src/templates/assignment_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %} Assignment Details {% endblock title %}
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ object.title }}</h2>
+    <p>by {{ object.author }} | {{ object.date }}</p>
+    <p>{{ object.body }}</p>
+</div>
+
+<p><a href="{% url 'assignment_edit' assignment.pk %}">Edit</a> | <a href="{% url 'assignment_delete' assignment.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'assignment_list' %}">Assignment List</a></p>
+
+{% endblock content %}

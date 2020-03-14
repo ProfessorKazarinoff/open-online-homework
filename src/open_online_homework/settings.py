@@ -31,16 +31,22 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1', '.pythonanywhere.com','.amazonaws.com'
 # Application definition
 
 INSTALLED_APPS = [
+    # Local
+    'users.apps.UsersConfig',
+    'courses.apps.CoursesConfig',
+    'assignments.apps.AssignmentsConfig',
+    'problems.apps.ProblemsConfig',
+
+    # 3rd Party
+    'crispy_forms',
+    
+    # Django Built-in
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',
-    'courses.apps.CoursesConfig',
-    'assignments.apps.AssignmentsConfig',
-    'problems.apps.ProblemsConfig',
 ]
 
 MIDDLEWARE = [
