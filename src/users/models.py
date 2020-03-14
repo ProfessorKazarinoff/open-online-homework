@@ -2,6 +2,7 @@
 
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
 PERMISSION_LEVEL_CHOICES = (
@@ -16,15 +17,13 @@ PERMISSION_LEVEL_CHOICES = (
 PERMISSION_LEVEL_SORT_ORDER = dict([(level[1], index) for index, level in enumerate(PERMISSION_LEVEL_CHOICES)])
 
 def compare_permissions(one, another):
-	return PERMISSION_LEVEL_SORT_ORDER[another] - PERMISSION_LEVEL_SORT_ORDER[one]
+    return PERMISSION_LEVEL_SORT_ORDER[another] - PERMISSION_LEVEL_SORT_ORDER[one]
 
 
-class User(models.Model):
-    first_name = models.CharField(max_length=30, blank=True, null=True)
-    last_name = models.CharField(max_length=30, blank=True, null=True)
-    middle_name = models.CharField(max_length=30, blank=True, null=True)
-    id_number = models.CharField(max_length=20, blank=True, null=True)
+
+class User(AbstractUser):
     email = models.CharField(max_length=30, blank=False)
+    id_number = models.CharField(max_length=30, blank=True, null=True)
     institution = models.CharField(max_length=30, blank=True, null=True)
 
     def __str__(self):
