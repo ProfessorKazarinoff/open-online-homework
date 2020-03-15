@@ -7,7 +7,11 @@ from django.urls import reverse
 class Problem(models.Model):
     title = models.CharField(max_length=255)
     question = models.TextField()
-    answer = models.TextField()
+    answer_one = models.TextField()
+    answer_two = models.TextField()
+    answer_three = models.TextField()
+    answer_four = models.TextField()
+    correct_answer = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
 
