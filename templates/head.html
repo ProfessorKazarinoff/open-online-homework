@@ -1,6 +1,7 @@
 <!-- templates/head.html -->
 
 {% load static %}
+{% load compress %}
   <head>
       {% block meta %}
         <meta charset="utf-8">
@@ -16,10 +17,10 @@
       {% endblock title %}
 
       {% block favicon %}<!-- Favicons -->{% endblock favicon %}
-
+      {% compress css %}
       {% block stylesheets %}
-        <!-- bootstrap 4.4.1 CDN -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- bootstrap 4.4.1 -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <!-- bootswatch litera theme -->
         <link rel="stylesheet" href="{% static 'css/bootstrap_litera.css' %}">
     <style>
@@ -45,4 +46,5 @@
       <link rel="stylesheet" href="{% static 'css/footer.css' %}">
       {% endblock stylesheets %}
       {% block custom_stylesheets %}{% endblock custom_stylesheets %}
+      {% endcompress %}
   </head>

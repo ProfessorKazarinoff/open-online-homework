@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'crispy_forms',
+    'compressor',
     
     # Django Built-in
     'django.contrib.admin',
@@ -136,6 +137,16 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Djanog Compressor
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_ENABLED = True
+#COMPRESS_OFFLINE = True   # for offline compression, but must use manage.py compress first before run server
 
 # Crispy Forms
 
