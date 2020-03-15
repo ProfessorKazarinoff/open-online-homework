@@ -1,0 +1,36 @@
+<!-- templates/problem_list.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Problems {% endblock title %}
+{% block custom_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/assignment-list.css' %}">
+{% endblock custom_stylesheets %}
+{% block content %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1>Problem List</h1>
+      <p class="lead text-muted">List of Problems created in the open online homework app</p>
+    </div>
+  </section>
+
+<div class="assignent-list">
+    {% for problem in object_list %}
+    <div class="card">
+        <div class="card-header">
+            <span class="font-weight-bold">{{ problem.title }}</span> &middot;
+            <span class="text-muted">created by {{ problem.author }}  | {{ problem.date }}</span>
+        </div>
+        <div class="card-body">
+            {{ problem.question }}
+        </div>
+        <div class="card-footer text-center text-muted">
+            <a href="{% url 'problem_edit' problem.pk %}">EDIT</a> | <a href="{% url 'problem_delete' problem.pk %}">DELETE</a>
+        </div>
+    </div>
+    <br />
+    {% endfor %}
+</div>
+{% endblock content %}

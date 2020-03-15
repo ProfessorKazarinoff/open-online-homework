@@ -1,8 +1,18 @@
 # problems/models.py
 
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 class Problem(models.Model):
-    pass
+    title = models.CharField(max_length=255)
+    question = models.TextField()
+    answer = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('problem_detail', args=[str(self.id)])

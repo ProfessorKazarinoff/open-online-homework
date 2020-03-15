@@ -1,4 +1,4 @@
-<!-- src/templates/assignment_list.html -->
+<!-- templates/assignment_list.html -->
 {% extends 'base.html' %}
 
 {% load static %}
@@ -24,7 +24,7 @@
             <span class="text-muted">created by {{ assignment.author }}  | {{ assignment.date }}</span>
         </div>
         <div class="card-body">
-            {{ assignment.body}}
+            {{ assignment.body }}
         </div>
         <div class="card-footer text-center text-muted">
             <a href="{% url 'assignment_edit' assignment.pk %}">EDIT</a> | <a href="{% url 'assignment_delete' assignment.pk %}">DELETE</a>

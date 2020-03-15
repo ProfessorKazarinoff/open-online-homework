@@ -1,0 +1,17 @@
+<!-- templates/problem_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %} Problem Details {% endblock title %}
+
+{% block content %}
+<div class="article-entry">
+    <h2>{{ object.title }}</h2>
+    <p>by {{ object.author }} | {{ object.date }}</p>
+    <p>{{ object.body }}</p>
+</div>
+
+<p><a href="{% url 'problem_edit' problem.pk %}">Edit</a> | <a href="{% url 'problem_delete' problem.pk %}">Delete</a></p>
+<p>Back to <a href="{% url 'problem_list' %}">Problem List</a></p>
+
+{% endblock content %}

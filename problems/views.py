@@ -1,5 +1,30 @@
 # problems/views.py
 
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
-# Create your views here.
+from .models import Problem
+
+class ProblemListView(ListView):
+    model = Problem
+    template_name = 'problem_list.html'
+
+class ProblemCreateView(CreateView):
+    model = Problem
+    fields = ('title','question','answer','author')
+    template_name = 'problem_new.html'
+
+class ProblemDetailView(DetailView):
+    model = Problem
+    template_name = 'problem_detail.html'
+
+class ProblemUpdateView(UpdateView):
+    model = Problem
+    fields = ('title','question','answer')
+    template_name = 'problem_edit.html'
+
+class ProblemDeleteView(DeleteView):
+    model = Problem
+    template_name = 'problem_delete.html'
+    success_url = reverse_lazy('problem_list')
