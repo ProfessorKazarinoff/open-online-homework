@@ -12,7 +12,16 @@ class ProblemListView(ListView):
 
 class ProblemCreateView(CreateView):
     model = Problem
-    fields = ('title','question','answer','author')
+    fields = (
+        'title',
+        'question',
+        'answer_one',
+        'answer_two',
+        'answer_three',
+        'answer_four',
+        'correct_answer',
+        'assignment',
+        'author')
     template_name = 'problem_new.html'
 
 class ProblemDetailView(DetailView):
@@ -21,7 +30,16 @@ class ProblemDetailView(DetailView):
 
 class ProblemUpdateView(UpdateView):
     model = Problem
-    fields = ('title','question','answer')
+    fields = (
+        'title',
+        'question',
+        'answer_one',
+        'answer_two',
+        'answer_three',
+        'answer_four',
+        'correct_answer',
+        'assignment',
+        'author')
     template_name = 'problem_edit.html'
 
 class ProblemDeleteView(DeleteView):
